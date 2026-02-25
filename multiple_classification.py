@@ -10,16 +10,10 @@ import streamlit as st
 from streamlit_option_menu import option_menu
 
 #import model
-import pickle
+loan_model = pickle.load(open("C:/Users/Lab/Desktop/ML/loan_model.sav",'rb'))
+ridingmower_model = pickle.load(open("C:/Users/Lab/Desktop/ML/RidingMowers_model.sav",'rb'))
+stress_model = pickle.load(open("Stress_model.sav",'rb')
 
-with open("loan_model", "rb") as f:
-    loan_model = pickle.load(f)
-
-with open("RidingMowers_model", "rb") as f:
-    ridingmower_model = pickle.load(f)
-
-with open("Stress_model", "rb") as f:
-    stress_model = pickle.load(f)
 
 with st.sidebar:
     selected = option_menu('Classification',['LOAN','RidingMower','Stress'])
